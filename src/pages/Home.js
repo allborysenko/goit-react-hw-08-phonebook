@@ -6,7 +6,7 @@ export default function Home() {
     <Container>
       <Title>
         Welcome to the contact book{' '}
-        <img src={phoneImage} alt="Phone" width="300" height="300" />
+        <img src={phoneImage} alt="Phone" width="48" height="48" />
       </Title>
     </Container>
   );
