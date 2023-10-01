@@ -2,8 +2,11 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createContact } from 'redux/contacts/operations';
-import { Label, Input, Button } from './ContactForm.styled';
+import { Label, FormContainer } from './ContactForm.styled';
 import { contactSelectors } from 'redux/index';
+
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -35,35 +38,41 @@ export const ContactForm = () => {
 
   return (
     <form onSubmit={submitForm}>
-      <Label>
-        Name
-        <Input
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-          placeholder="Enter name"
-          value={name}
-          onChange={changeName}
-        />
-      </Label>
+      <FormContainer>
+        <Label>
+          <TextField
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+            placeholder="Enter name"
+            value={name}
+            onChange={changeName}
+            variant="outlined"
+            size="small"
+          />
+        </Label>
 
-      <Label>
-        Number
-        <Input
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-          placeholder="Enter phone number"
-          value={number}
-          onChange={changeNumber}
-        />
-      </Label>
+        <Label>
+          <TextField
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+            placeholder="Enter phone number"
+            value={number}
+            onChange={changeNumber}
+            variant="outlined"
+            size="small"
+          />
+        </Label>
 
-      <Button type="submit">Add contact</Button>
+        <Button type="submit" variant="contained">
+          Add contact
+        </Button>
+      </FormContainer>
     </form>
   );
 };

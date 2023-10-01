@@ -29,3 +29,11 @@ export const Total = styled.p`
   font-size: 14px;
   color: #000;
 `;
+
+
+
+export const FilterContainer = styled.div`
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+`;

@@ -2,6 +2,9 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import { Form, Label } from './LoginForm.styled';
 
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
@@ -20,14 +23,28 @@ export const LoginForm = () => {
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
       <Label>
-        Email
-        <input type="email" name="email" />
+        <TextField
+          type="email"
+          name="email"
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          size="small"
+        />
       </Label>
       <Label>
-        Password
-        <input type="password" name="password" />
+        <TextField
+          type="password"
+          name="password"
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          size="small"
+        />
       </Label>
-      <button type="submit">Log In</button>
+      <Button type="submit" variant="contained">
+        Log In
+      </Button>
     </Form>
   );
 };

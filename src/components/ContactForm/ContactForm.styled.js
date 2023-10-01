@@ -33,3 +33,9 @@ export const Button = styled.button`
 
   border-radius: 10px;
 `;
+
+export const FormContainer = styled.div`
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+`;

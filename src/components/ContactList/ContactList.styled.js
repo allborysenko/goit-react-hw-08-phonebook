@@ -1,30 +1,26 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  padding-left: 0px;
-  list-style: none;
-`;
+export const ContactContainer = styled.div`
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 400px;
 
-export const List = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 0px;
-  list-style: none;
-  color: #000;
-  font-weight: 600;
- 
-`;
-export const Button = styled.button`
-  max-width: 100px;
-  padding: 5px;
-  margin: 5px 10px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #115c39;
-  text-transform: uppercase;
-  border: 1px dotted #000;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 700;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 `;
